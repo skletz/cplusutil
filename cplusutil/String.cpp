@@ -8,6 +8,14 @@ std::string cplusutil::String::toStirng(int i)
 	return std::to_string(i);
 }
 
+unsigned cplusutil::String::toUnsignedInt(std::string _number)
+{
+	std::istringstream reader(_number);
+	unsigned int value;
+	reader >> value;
+	return value;
+}
+
 int cplusutil::String::extractIntFromString(std::string fileName)
 {
 	int id = 0;
