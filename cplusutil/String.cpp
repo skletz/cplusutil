@@ -16,27 +16,45 @@ unsigned cplusutil::String::toUnsignedInt(std::string _number)
 	return value;
 }
 
-int cplusutil::String::extractIntFromString(std::string fileName)
+/*! Extract the integer part of a string
+	
+	Returns the integer containing the string. The _hasInteger out parameter
+	indicates whether the string contains a integer or not.
+
+	\param _string a string argument
+	\param _hasInteger contains true if an integer is part of _string; otherwise, contains false.
+	\return the integer part extracted from the string; -1 if there are no digits
+
+*/
+int cplusutil::String::extractIntegerPart(std::string _string, bool& _hasInteger)
 {
-	int id = 0;
+	int integervalue = 0;
 	std::string numbers = "0123456789";
-	std::size_t found = fileName.find_first_of(numbers.c_str());
+	std::size_t integerpart = _string.find_first_of(numbers.c_str());
+
 	try
 	{
-		id = std::atoi(fileName.c_str());
+		integervalue = std::atoi(_string.c_str());
 	}
 	catch (std::exception const &)
 	{
-
-		while (found != std::string::npos) {
-			std::cout << found << std::endl;
-			found = fileName.find_first_of(numbers.c_str(), found + 1);
+		int counter = 0;
+		while (integerpart != std::string::npos) {
+			integerpart = _string.find_first_of(numbers.c_str(), integerpart + 1);
+			counter++;
 		}
-		//LOG(WARNING) << "Video Filename contains no Integer to generate a unique ID; Video ID is set to 0";
-		return found;
 
+		if (counter == 0)
+		{
+			_hasInteger = false;
+			return -1;
+		}
+			
+		_hasInteger = true;
+		return integerpart;
 	}
-	return id;
+
+	return integervalue;
 }
 
 std::string cplusutil::String::concatIntegers(std::string delemniter, int args, ...)
