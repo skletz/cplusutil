@@ -42,6 +42,9 @@
     <ClInclude Include="cplusutil\DateTime.hpp">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="cplusutil\cplusutil.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cplusutil\Directory.cpp">
