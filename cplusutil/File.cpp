@@ -10,6 +10,13 @@ File::File(std::string path, std::string file)
 	mPartFileExtension = cplusutil::FileIO::getFileExtension(file);
 }
 
+File::File(std::string path, std::string filename, std::string fileExtension)
+{
+	mPartPath = path;
+	mPartFilename = filename;
+	mPartFileExtension = fileExtension;
+}
+
 File::File(std::string file)
 {
 	setFile(file);

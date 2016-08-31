@@ -8,7 +8,8 @@ namespace cplusutil
 {
 	class Terminal
 	{
-		inline static void showProgress(std::string label, int step, int _total);
+	public:
+		static void showProgress(std::string label, int step, int _total);
 	};
 }
 
