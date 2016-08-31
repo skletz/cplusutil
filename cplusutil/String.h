@@ -11,8 +11,10 @@ namespace cplusutil
 		public:
 			static std::string toStirng(int i);
 
-			static int extractIntFromString(std::string fileName);
+			static unsigned int toUnsignedInt(std::string _number);
 
+			static int extractIntegerPart(std::string _string, bool& _hasInteger);
+			
 			static std::string concatIntegers(std::string delemniter, int args ...);
 
 			static std::string concatCStrings(std::string delemniter, int argc ...);
