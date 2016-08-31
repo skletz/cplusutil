@@ -57,6 +57,29 @@ int cplusutil::String::extractIntegerPart(std::string _string, bool& _hasInteger
 	return integervalue;
 }
 
+int cplusutil::String::extractIntFromString(std::string fileName)
+{
+	int id = 0;
+	std::string numbers = "0123456789";
+	std::size_t found = fileName.find_first_of(numbers.c_str());
+	try
+	{
+		id = std::atoi(fileName.c_str());
+	}
+	catch (std::exception const &)
+	{
+
+		while (found != std::string::npos) {
+			std::cout << found << std::endl;
+			found = fileName.find_first_of(numbers.c_str(), found + 1);
+		}
+		//LOG(WARNING) << "Video Filename contains no Integer to generate a unique ID; Video ID is set to 0";
+		return found;
+
+	}
+	return id;
+}
+
 std::string cplusutil::String::concatIntegers(std::string delemniter, int args, ...)
 {
 	va_list list;
