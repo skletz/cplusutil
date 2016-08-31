@@ -15,57 +15,57 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="cplusutil\Constants.h">
+    <ClInclude Include="cplusutil\include\cplusutil.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="cplusutil\Directory.h">
+    <ClInclude Include="cplusutil\src\Constants.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="cplusutil\Enums.h">
+    <ClInclude Include="cplusutil\src\DateTime.hpp">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="cplusutil\File.h">
+    <ClInclude Include="cplusutil\src\Directory.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="cplusutil\Memory.h">
+    <ClInclude Include="cplusutil\src\Enums.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="cplusutil\String.h">
+    <ClInclude Include="cplusutil\src\File.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="cplusutil\Terminal.h">
+    <ClInclude Include="cplusutil\src\FileIO.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="cplusutil\FileIO.h">
+    <ClInclude Include="cplusutil\src\Memory.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="cplusutil\DateTime.hpp">
+    <ClInclude Include="cplusutil\src\String.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="cplusutil\cplusutil.h">
+    <ClInclude Include="cplusutil\src\Terminal.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="cplusutil\Directory.cpp">
+    <ClCompile Include="cplusutil\src\DateTime.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="cplusutil\File.cpp">
+    <ClCompile Include="cplusutil\src\demo.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="cplusutil\demo.cpp">
+    <ClCompile Include="cplusutil\src\Directory.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="cplusutil\FileIO.cpp">
+    <ClCompile Include="cplusutil\src\File.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="cplusutil\String.cpp">
+    <ClCompile Include="cplusutil\src\FileIO.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="cplusutil\DateTime.cpp">
+    <ClCompile Include="cplusutil\src\String.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="cplusutil\Terminal.cpp">
+    <ClCompile Include="cplusutil\src\Terminal.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>

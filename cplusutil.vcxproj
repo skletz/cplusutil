@@ -10,6 +10,27 @@
       <Platform>Win32</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="cplusutil\include\cplusutil.h" />
+    <ClInclude Include="cplusutil\src\Constants.h" />
+    <ClInclude Include="cplusutil\src\DateTime.hpp" />
+    <ClInclude Include="cplusutil\src\Directory.h" />
+    <ClInclude Include="cplusutil\src\Enums.h" />
+    <ClInclude Include="cplusutil\src\File.h" />
+    <ClInclude Include="cplusutil\src\FileIO.h" />
+    <ClInclude Include="cplusutil\src\Memory.h" />
+    <ClInclude Include="cplusutil\src\String.h" />
+    <ClInclude Include="cplusutil\src\Terminal.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="cplusutil\src\DateTime.cpp" />
+    <ClCompile Include="cplusutil\src\demo.cpp" />
+    <ClCompile Include="cplusutil\src\Directory.cpp" />
+    <ClCompile Include="cplusutil\src\File.cpp" />
+    <ClCompile Include="cplusutil\src\FileIO.cpp" />
+    <ClCompile Include="cplusutil\src\String.cpp" />
+    <ClCompile Include="cplusutil\src\Terminal.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{006D52F0-0ECC-43BF-B5DA-E2B9A38D9727}</ProjectGuid>
     <RootNamespace>cplusutil</RootNamespace>
@@ -69,27 +90,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClInclude Include="cplusutil\Constants.h" />
-    <ClInclude Include="cplusutil\cplusutil.h" />
-    <ClInclude Include="cplusutil\DateTime.hpp" />
-    <ClInclude Include="cplusutil\Directory.h" />
-    <ClInclude Include="cplusutil\Enums.h" />
-    <ClInclude Include="cplusutil\File.h" />
-    <ClInclude Include="cplusutil\FileIO.h" />
-    <ClInclude Include="cplusutil\Memory.h" />
-    <ClInclude Include="cplusutil\String.h" />
-    <ClInclude Include="cplusutil\Terminal.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="cplusutil\DateTime.cpp" />
-    <ClCompile Include="cplusutil\demo.cpp" />
-    <ClCompile Include="cplusutil\Directory.cpp" />
-    <ClCompile Include="cplusutil\File.cpp" />
-    <ClCompile Include="cplusutil\FileIO.cpp" />
-    <ClCompile Include="cplusutil\String.cpp" />
-    <ClCompile Include="cplusutil\Terminal.cpp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
