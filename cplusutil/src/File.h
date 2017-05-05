@@ -13,10 +13,6 @@ class File
 	//String containing the file extension only
 	std::string mPartFileExtension;
 
-	void setFile(std::string file);
-	void setFilename(std::string name);
-	void setFileExtension(std::string extension);
-
 public:
 	File(std::string path, std::string filename, std::string fileExtension);
 	File(std::string path, std::string file);
@@ -28,6 +24,11 @@ public:
 
 	//std::string getAbsolutePath();
 	//std::string getRelativePath();
+
+	void setFile(std::string file);
+	void setFilename(std::string name);
+	void setFileExtension(std::string extension);
+	void setPath(std::string path);
 
 	void fileparts(std::string& pathstr, std::string& name, std::string& ext) const;
 

@@ -79,6 +79,11 @@ void File::setFileExtension(std::string extension)
 
 }
 
+void File::setPath(std::string path)
+{
+	mPartPath = path;
+}
+
 void File::fileparts(std::string& pathstr, std::string& name, std::string& ext) const
 {
 	pathstr = mPartPath;

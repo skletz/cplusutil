@@ -35,6 +35,7 @@ int cplusutil::String::extractIntegerPart(std::string _string, bool& _hasInteger
 	try
 	{
 		integervalue = std::atoi(_string.c_str());
+		_hasInteger = true;
 	}
 	catch (std::exception const &)
 	{
@@ -49,11 +50,13 @@ int cplusutil::String::extractIntegerPart(std::string _string, bool& _hasInteger
 			_hasInteger = false;
 			return -1;
 		}
-			
+
 		_hasInteger = true;
 		return integerpart;
 	}
 
+	if (integervalue == 0)
+		_hasInteger = false;
 	return integervalue;
 }
 
