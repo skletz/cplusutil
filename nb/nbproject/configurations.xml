@@ -43,7 +43,7 @@
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
-    <conf name="Debug" type="1">
+    <conf name="Debug" type="3">
       <toolsSet>
         <compilerSet>default</compilerSet>
         <dependencyChecking>true</dependencyChecking>
@@ -52,16 +52,12 @@
       <compileType>
         <ccTool>
           <standard>8</standard>
+          <commandlineTool>g++</commandlineTool>
+          <commandLine>-m64</commandLine>
+          <useLinkerLibraries>false</useLinkerLibraries>
         </ccTool>
-        <linkerTool>
-          <linkerAddLib>
-            <pElem>/usr/local/lib</pElem>
-          </linkerAddLib>
-          <linkerLibItems>
-            <linkerOptionItem>-lboost_filesystem</linkerOptionItem>
-            <linkerOptionItem>-lboost_system</linkerOptionItem>
-          </linkerLibItems>
-        </linkerTool>
+        <archiverTool>
+        </archiverTool>
       </compileType>
       <packaging>
         <packType>Tar</packType>
@@ -104,9 +100,9 @@
                             owner="root"
                             group="bin"/>
           <packFileListElem type="File"
-                            to="${PACKAGE_TOP_DIR}bin/${OUTPUT_BASENAME}"
+                            to="${PACKAGE_TOP_DIR}lib/${OUTPUT_BASENAME}"
                             from="${OUTPUT_PATH}"
-                            perm="755"
+                            perm="644"
                             owner="root"
                             group="bin"/>
         </packFileList>
@@ -150,6 +146,8 @@
         </cTool>
         <ccTool>
           <developmentMode>5</developmentMode>
+          <standard>8</standard>
+          <commandLine>-m64</commandLine>
         </ccTool>
         <fortranCompilerTool>
           <developmentMode>5</developmentMode>

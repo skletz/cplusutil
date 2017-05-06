@@ -47,8 +47,8 @@ OBJECTFILES= \
 CFLAGS=
 
 # CC Compiler Flags
-CCFLAGS=
-CXXFLAGS=
+CCFLAGS=-m64
+CXXFLAGS=-m64
 
 # Fortran Compiler Flags
 FFLAGS=
@@ -57,7 +57,7 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=
+LDLIBSOPTIONS=-L/usr/local/lib -lboost_filesystem -lboost_system
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
@@ -72,32 +72,32 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libnb.a: ${OBJECTFILES}
 ${OBJECTDIR}/_ext/fbfb0bc5/Directory.o: ../cplusutil/src/Directory.cpp
 	${MKDIR} -p ${OBJECTDIR}/_ext/fbfb0bc5
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/fbfb0bc5/Directory.o ../cplusutil/src/Directory.cpp
+	$(COMPILE.cc) -O2 -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/fbfb0bc5/Directory.o ../cplusutil/src/Directory.cpp
 
 ${OBJECTDIR}/_ext/fbfb0bc5/File.o: ../cplusutil/src/File.cpp
 	${MKDIR} -p ${OBJECTDIR}/_ext/fbfb0bc5
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/fbfb0bc5/File.o ../cplusutil/src/File.cpp
+	$(COMPILE.cc) -O2 -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/fbfb0bc5/File.o ../cplusutil/src/File.cpp
 
 ${OBJECTDIR}/_ext/fbfb0bc5/FileIO.o: ../cplusutil/src/FileIO.cpp
 	${MKDIR} -p ${OBJECTDIR}/_ext/fbfb0bc5
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/fbfb0bc5/FileIO.o ../cplusutil/src/FileIO.cpp
+	$(COMPILE.cc) -O2 -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/fbfb0bc5/FileIO.o ../cplusutil/src/FileIO.cpp
 
 ${OBJECTDIR}/_ext/fbfb0bc5/String.o: ../cplusutil/src/String.cpp
 	${MKDIR} -p ${OBJECTDIR}/_ext/fbfb0bc5
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/fbfb0bc5/String.o ../cplusutil/src/String.cpp
+	$(COMPILE.cc) -O2 -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/fbfb0bc5/String.o ../cplusutil/src/String.cpp
 
 ${OBJECTDIR}/_ext/fbfb0bc5/Terminal.o: ../cplusutil/src/Terminal.cpp
 	${MKDIR} -p ${OBJECTDIR}/_ext/fbfb0bc5
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/fbfb0bc5/Terminal.o ../cplusutil/src/Terminal.cpp
+	$(COMPILE.cc) -O2 -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/fbfb0bc5/Terminal.o ../cplusutil/src/Terminal.cpp
 
 ${OBJECTDIR}/_ext/fbfb0bc5/demo.o: ../cplusutil/src/demo.cpp
 	${MKDIR} -p ${OBJECTDIR}/_ext/fbfb0bc5
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/fbfb0bc5/demo.o ../cplusutil/src/demo.cpp
+	$(COMPILE.cc) -O2 -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/fbfb0bc5/demo.o ../cplusutil/src/demo.cpp
 
 # Subprojects
 .build-subprojects:
