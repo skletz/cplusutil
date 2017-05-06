@@ -19,29 +19,30 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="cplusutil\include\cplusutil.h" />
-    <ClInclude Include="cplusutil\src\Constants.h" />
-    <ClInclude Include="cplusutil\src\DateTime.hpp" />
-    <ClInclude Include="cplusutil\src\Directory.h" />
-    <ClInclude Include="cplusutil\src\Enums.h" />
-    <ClInclude Include="cplusutil\src\File.h" />
-    <ClInclude Include="cplusutil\src\FileIO.h" />
-    <ClInclude Include="cplusutil\src\Memory.h" />
-    <ClInclude Include="cplusutil\src\String.h" />
-    <ClInclude Include="cplusutil\src\Terminal.h" />
+    <ClInclude Include="..\cplusutil\include\cplusutil.hpp" />
+    <ClInclude Include="..\cplusutil\src\Constants.hpp" />
+    <ClInclude Include="..\cplusutil\src\DateTime.hpp" />
+    <ClInclude Include="..\cplusutil\src\Directory.hpp" />
+    <ClInclude Include="..\cplusutil\src\Enums.hpp" />
+    <ClInclude Include="..\cplusutil\src\File.hpp" />
+    <ClInclude Include="..\cplusutil\src\FileIO.hpp" />
+    <ClInclude Include="..\cplusutil\src\Memory.hpp" />
+    <ClInclude Include="..\cplusutil\src\String.hpp" />
+    <ClInclude Include="..\cplusutil\src\Terminal.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="cplusutil\src\DateTime.cpp" />
-    <ClCompile Include="cplusutil\src\demo.cpp" />
-    <ClCompile Include="cplusutil\src\Directory.cpp" />
-    <ClCompile Include="cplusutil\src\File.cpp" />
-    <ClCompile Include="cplusutil\src\FileIO.cpp" />
-    <ClCompile Include="cplusutil\src\String.cpp" />
-    <ClCompile Include="cplusutil\src\Terminal.cpp" />
+    <ClCompile Include="..\cplusutil\src\DateTime.cpp" />
+    <ClCompile Include="..\cplusutil\src\demo.cpp" />
+    <ClCompile Include="..\cplusutil\src\Directory.cpp" />
+    <ClCompile Include="..\cplusutil\src\File.cpp" />
+    <ClCompile Include="..\cplusutil\src\FileIO.cpp" />
+    <ClCompile Include="..\cplusutil\src\String.cpp" />
+    <ClCompile Include="..\cplusutil\src\Terminal.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{006D52F0-0ECC-43BF-B5DA-E2B9A38D9727}</ProjectGuid>
     <RootNamespace>cplusutil</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -51,7 +52,7 @@
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
@@ -116,7 +117,7 @@
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(Boost_DIR)\stage\lib\win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">

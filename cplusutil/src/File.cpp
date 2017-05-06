@@ -1,6 +1,6 @@
-#include "File.h"
-#include "FileIO.h"
-#include "String.h"
+#include "File.hpp"
+#include "FileIO.hpp"
+#include "String.hpp"
 
 
 File::File(std::string path, std::string file)

@@ -1,5 +1,5 @@
-#include "Directory.h"
-#include "FileIO.h"
+#include "Directory.hpp"
+#include "FileIO.hpp"
 
 Directory::Directory(std::string path)
 {

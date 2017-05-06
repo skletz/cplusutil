@@ -1,6 +1,6 @@
-#include "Terminal.h"
+#include "Terminal.hpp"
 
-void cplusutil::Terminal::showProgress(std::string label, int step, int _total)
+void cplusutil::Terminal::showProgress(std::string _label, int _step, int _total)
 {
 	printf("\r");
 	int tmptotal = _total;
@@ -13,19 +13,19 @@ void cplusutil::Terminal::showProgress(std::string label, int step, int _total)
 	const int pwidth = 72;
 
 	//minus label len
-	int width = pwidth - label.length();
-	int pos = (step * width) / tmptotal;
+	int width = pwidth - _label.length();
+	int pos = (_step * width) / tmptotal;
 
 
-	int percent = (step * 100) / tmptotal;
+	int percent = (_step * 100) / tmptotal;
 
 
-	printf("%s[", label.c_str());
+	printf("%s[", _label.c_str());
 
 	//fill progress bar with =
 	for (int i = 0; i < pos; i++)  printf("%c", '=');
 
 	//fill progress bar with spaces
-	printf("% *c", width - pos + 1, ']');
+	printf("%*c", width - pos + 1, ']');
 	printf(" %3d%%\r", percent);
 }
