@@ -4,7 +4,7 @@
 #include <string>
 #include <vector>
 
-#include <boost/filesystem/path.hpp>
+#include <boost/filesystem.hpp>
 
 namespace fs = boost::filesystem;
 class Directory

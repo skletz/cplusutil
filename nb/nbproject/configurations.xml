@@ -4,15 +4,13 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
-      <itemPath>../cplusutil/src/Constants.h</itemPath>
-      <itemPath>../cplusutil/src/DateTime.hpp</itemPath>
-      <itemPath>../cplusutil/src/Directory.h</itemPath>
-      <itemPath>../cplusutil/src/File.h</itemPath>
-      <itemPath>../cplusutil/src/FileIO.h</itemPath>
-      <itemPath>../cplusutil/src/Memory.h</itemPath>
-      <itemPath>../cplusutil/src/String.h</itemPath>
-      <itemPath>../cplusutil/src/Terminal.h</itemPath>
-      <itemPath>../cplusutil/include/cplusutil.h</itemPath>
+      <itemPath>../cplusutil/src/Constants.hpp</itemPath>
+      <itemPath>../cplusutil/src/Directory.hpp</itemPath>
+      <itemPath>../cplusutil/src/File.hpp</itemPath>
+      <itemPath>../cplusutil/src/FileIO.hpp</itemPath>
+      <itemPath>../cplusutil/src/String.hpp</itemPath>
+      <itemPath>../cplusutil/src/Terminal.hpp</itemPath>
+      <itemPath>../cplusutil/include/cplusutil.hpp</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -21,9 +19,7 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
-      <itemPath>../cplusutil/src/DateTime.cpp</itemPath>
       <itemPath>../cplusutil/src/Directory.cpp</itemPath>
-      <itemPath>../cplusutil/src/Enums.h</itemPath>
       <itemPath>../cplusutil/src/File.cpp</itemPath>
       <itemPath>../cplusutil/src/FileIO.cpp</itemPath>
       <itemPath>../cplusutil/src/String.cpp</itemPath>
@@ -47,7 +43,7 @@
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
-    <conf name="Debug" type="3">
+    <conf name="Debug" type="1">
       <toolsSet>
         <compilerSet>default</compilerSet>
         <dependencyChecking>true</dependencyChecking>
@@ -57,9 +53,15 @@
         <ccTool>
           <standard>8</standard>
         </ccTool>
-        <archiverTool>
-          <output>${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/lib-cplusutil.a</output>
-        </archiverTool>
+        <linkerTool>
+          <linkerAddLib>
+            <pElem>/usr/local/lib</pElem>
+          </linkerAddLib>
+          <linkerLibItems>
+            <linkerOptionItem>-lboost_filesystem</linkerOptionItem>
+            <linkerOptionItem>-lboost_system</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
       </compileType>
       <packaging>
         <packType>Tar</packType>
@@ -71,39 +73,67 @@
                             perm="644"
                             owner="root"
                             group="bin"/>
+          <packFileListElem type="File"
+                            to="${PACKAGE_TOP_DIR}lib/${OUTPUT_BASENAME}"
+                            from="${OUTPUT_PATH}"
+                            perm="644"
+                            owner="root"
+                            group="bin"/>
+          <packFileListElem type="File"
+                            to="${PACKAGE_TOP_DIR}lib/${OUTPUT_BASENAME}"
+                            from="${OUTPUT_PATH}"
+                            perm="644"
+                            owner="root"
+                            group="bin"/>
+          <packFileListElem type="File"
+                            to="${PACKAGE_TOP_DIR}bin/${OUTPUT_BASENAME}"
+                            from="${OUTPUT_PATH}"
+                            perm="755"
+                            owner="root"
+                            group="bin"/>
+          <packFileListElem type="File"
+                            to="${PACKAGE_TOP_DIR}bin/${OUTPUT_BASENAME}"
+                            from="${OUTPUT_PATH}"
+                            perm="755"
+                            owner="root"
+                            group="bin"/>
+          <packFileListElem type="File"
+                            to="${PACKAGE_TOP_DIR}bin/${OUTPUT_BASENAME}"
+                            from="${OUTPUT_PATH}"
+                            perm="755"
+                            owner="root"
+                            group="bin"/>
+          <packFileListElem type="File"
+                            to="${PACKAGE_TOP_DIR}bin/${OUTPUT_BASENAME}"
+                            from="${OUTPUT_PATH}"
+                            perm="755"
+                            owner="root"
+                            group="bin"/>
         </packFileList>
       </packaging>
-      <item path="../cplusutil/include/cplusutil.h" ex="false" tool="3" flavor2="0">
+      <item path="../cplusutil/include/cplusutil.hpp" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../cplusutil/src/Constants.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../cplusutil/src/DateTime.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="../cplusutil/src/DateTime.hpp" ex="false" tool="3" flavor2="0">
+      <item path="../cplusutil/src/Constants.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../cplusutil/src/Directory.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="../cplusutil/src/Directory.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../cplusutil/src/Enums.h" ex="false" tool="3" flavor2="0">
+      <item path="../cplusutil/src/Directory.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../cplusutil/src/File.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="../cplusutil/src/File.h" ex="false" tool="3" flavor2="0">
+      <item path="../cplusutil/src/File.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../cplusutil/src/FileIO.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="../cplusutil/src/FileIO.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../cplusutil/src/Memory.h" ex="false" tool="3" flavor2="0">
+      <item path="../cplusutil/src/FileIO.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../cplusutil/src/String.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="../cplusutil/src/String.h" ex="false" tool="3" flavor2="0">
+      <item path="../cplusutil/src/String.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../cplusutil/src/Terminal.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="../cplusutil/src/Terminal.h" ex="false" tool="3" flavor2="0">
+      <item path="../cplusutil/src/Terminal.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../cplusutil/src/demo.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -130,37 +160,29 @@
         <archiverTool>
         </archiverTool>
       </compileType>
-      <item path="../cplusutil/include/cplusutil.h" ex="false" tool="3" flavor2="0">
+      <item path="../cplusutil/include/cplusutil.hpp" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="../cplusutil/src/Constants.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../cplusutil/src/DateTime.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="../cplusutil/src/DateTime.hpp" ex="false" tool="3" flavor2="0">
+      <item path="../cplusutil/src/Constants.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../cplusutil/src/Directory.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="../cplusutil/src/Directory.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../cplusutil/src/Enums.h" ex="false" tool="3" flavor2="0">
+      <item path="../cplusutil/src/Directory.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../cplusutil/src/File.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="../cplusutil/src/File.h" ex="false" tool="3" flavor2="0">
+      <item path="../cplusutil/src/File.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../cplusutil/src/FileIO.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="../cplusutil/src/FileIO.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="../cplusutil/src/Memory.h" ex="false" tool="3" flavor2="0">
+      <item path="../cplusutil/src/FileIO.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../cplusutil/src/String.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="../cplusutil/src/String.h" ex="false" tool="3" flavor2="0">
+      <item path="../cplusutil/src/String.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../cplusutil/src/Terminal.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="../cplusutil/src/Terminal.h" ex="false" tool="3" flavor2="0">
+      <item path="../cplusutil/src/Terminal.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../cplusutil/src/demo.cpp" ex="false" tool="1" flavor2="0">
       </item>

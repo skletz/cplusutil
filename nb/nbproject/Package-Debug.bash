@@ -13,8 +13,8 @@ CND_BUILDDIR=build
 CND_DLIB_EXT=so
 NBTMPDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}/tmp-packaging
 TMPDIRNAME=tmp-packaging
-OUTPUT_PATH=${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/lib-cplusutil.a
-OUTPUT_BASENAME=lib-cplusutil.a
+OUTPUT_PATH=${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/nb
+OUTPUT_BASENAME=nb
 PACKAGE_TOP_DIR=nb-cplusutil/
 
 # Functions
@@ -66,6 +66,26 @@ copyFileToTmpDir "${OUTPUT_PATH}" "${NBTMPDIR}/${PACKAGE_TOP_DIR}lib/${OUTPUT_BA
 cd "${TOP}"
 makeDirectory "${NBTMPDIR}/nb-cplusutil/lib"
 copyFileToTmpDir "${OUTPUT_PATH}" "${NBTMPDIR}/${PACKAGE_TOP_DIR}lib/${OUTPUT_BASENAME}" 0644
+
+cd "${TOP}"
+makeDirectory "${NBTMPDIR}/nb-cplusutil/lib"
+copyFileToTmpDir "${OUTPUT_PATH}" "${NBTMPDIR}/${PACKAGE_TOP_DIR}lib/${OUTPUT_BASENAME}" 0644
+
+cd "${TOP}"
+makeDirectory "${NBTMPDIR}/nb-cplusutil/bin"
+copyFileToTmpDir "${OUTPUT_PATH}" "${NBTMPDIR}/${PACKAGE_TOP_DIR}bin/${OUTPUT_BASENAME}" 0755
+
+cd "${TOP}"
+makeDirectory "${NBTMPDIR}/nb-cplusutil/bin"
+copyFileToTmpDir "${OUTPUT_PATH}" "${NBTMPDIR}/${PACKAGE_TOP_DIR}bin/${OUTPUT_BASENAME}" 0755
+
+cd "${TOP}"
+makeDirectory "${NBTMPDIR}/nb-cplusutil/bin"
+copyFileToTmpDir "${OUTPUT_PATH}" "${NBTMPDIR}/${PACKAGE_TOP_DIR}bin/${OUTPUT_BASENAME}" 0755
+
+cd "${TOP}"
+makeDirectory "${NBTMPDIR}/nb-cplusutil/bin"
+copyFileToTmpDir "${OUTPUT_PATH}" "${NBTMPDIR}/${PACKAGE_TOP_DIR}bin/${OUTPUT_BASENAME}" 0755
 
 
 # Generate tar file

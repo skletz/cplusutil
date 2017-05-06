@@ -35,7 +35,6 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/_ext/fbfb0bc5/DateTime.o \
 	${OBJECTDIR}/_ext/fbfb0bc5/Directory.o \
 	${OBJECTDIR}/_ext/fbfb0bc5/File.o \
 	${OBJECTDIR}/_ext/fbfb0bc5/FileIO.o \
@@ -58,22 +57,15 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=
+LDLIBSOPTIONS=-L/usr/local/lib -lboost_filesystem -lboost_system
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
-	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/lib-cplusutil.a
+	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/nb
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/lib-cplusutil.a: ${OBJECTFILES}
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/nb: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
-	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/lib-cplusutil.a
-	${AR} -rv ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/lib-cplusutil.a ${OBJECTFILES} 
-	$(RANLIB) ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/lib-cplusutil.a
-
-${OBJECTDIR}/_ext/fbfb0bc5/DateTime.o: ../cplusutil/src/DateTime.cpp
-	${MKDIR} -p ${OBJECTDIR}/_ext/fbfb0bc5
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/fbfb0bc5/DateTime.o ../cplusutil/src/DateTime.cpp
+	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/nb ${OBJECTFILES} ${LDLIBSOPTIONS}
 
 ${OBJECTDIR}/_ext/fbfb0bc5/Directory.o: ../cplusutil/src/Directory.cpp
 	${MKDIR} -p ${OBJECTDIR}/_ext/fbfb0bc5

@@ -35,7 +35,6 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/_ext/fbfb0bc5/DateTime.o \
 	${OBJECTDIR}/_ext/fbfb0bc5/Directory.o \
 	${OBJECTDIR}/_ext/fbfb0bc5/File.o \
 	${OBJECTDIR}/_ext/fbfb0bc5/FileIO.o \
@@ -69,11 +68,6 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libnb.a: ${OBJECTFILES}
 	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libnb.a
 	${AR} -rv ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libnb.a ${OBJECTFILES} 
 	$(RANLIB) ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libnb.a
-
-${OBJECTDIR}/_ext/fbfb0bc5/DateTime.o: ../cplusutil/src/DateTime.cpp
-	${MKDIR} -p ${OBJECTDIR}/_ext/fbfb0bc5
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/fbfb0bc5/DateTime.o ../cplusutil/src/DateTime.cpp
 
 ${OBJECTDIR}/_ext/fbfb0bc5/Directory.o: ../cplusutil/src/Directory.cpp
 	${MKDIR} -p ${OBJECTDIR}/_ext/fbfb0bc5
