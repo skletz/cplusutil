@@ -21,17 +21,13 @@
   <ItemGroup>
     <ClInclude Include="..\cplusutil\include\cplusutil.hpp" />
     <ClInclude Include="..\cplusutil\src\Constants.hpp" />
-    <ClInclude Include="..\cplusutil\src\DateTime.hpp" />
     <ClInclude Include="..\cplusutil\src\Directory.hpp" />
-    <ClInclude Include="..\cplusutil\src\Enums.hpp" />
     <ClInclude Include="..\cplusutil\src\File.hpp" />
     <ClInclude Include="..\cplusutil\src\FileIO.hpp" />
-    <ClInclude Include="..\cplusutil\src\Memory.hpp" />
     <ClInclude Include="..\cplusutil\src\String.hpp" />
     <ClInclude Include="..\cplusutil\src\Terminal.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\cplusutil\src\DateTime.cpp" />
     <ClCompile Include="..\cplusutil\src\demo.cpp" />
     <ClCompile Include="..\cplusutil\src\Directory.cpp" />
     <ClCompile Include="..\cplusutil\src\File.cpp" />

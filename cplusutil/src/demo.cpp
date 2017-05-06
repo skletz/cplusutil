@@ -21,6 +21,41 @@
 **/
 
 #include "../include/cplusutil.hpp"
+#include <iostream>
+
+#if defined(WIN32) || defined(_WIN32) || defined(__WIN32) && !defined(__CYGWIN__)
+#include <windows.h>
+std::string getexepath()
+{
+	char result[MAX_PATH];
+	return std::string(result, GetModuleFileName(NULL, result, MAX_PATH));
+}
+#else
+#include <limits.h>
+#include <unistd.h>
+std::string getexepath()
+{
+	char result[PATH_MAX];
+	ssize_t count = readlink("/proc/self/exe", result, PATH_MAX);
+	return std::string(result, (count > 0) ? count : 0);
+}
+#endif
+
+void demoFileIO(std::string path)
+{
+	//Ist the current Path validate
+	bool isValid = cplusutil::FileIO::isValidPathToFile(path);
+	if (isValid)
+	{
+		std::cout << "The path " << path << " is valid!" << std::endl;
+	}
+	else
+	{
+		std::cout << "The path " << path << " is not valid!" << std::endl;
+	}
+
+	std::cout << "The current working directory is " << cplusutil::FileIO::getCurrentWorkingDirectory() << std::endl;
+}
 
 void demoTerminal(std::string label, int _max)
 {
@@ -32,6 +67,9 @@ void demoTerminal(std::string label, int _max)
 
 int main(int argc, char** argv)
 {
+	//FileIO
+	demoFileIO(getexepath());
+
 	//Terminal
 	demoTerminal("Demonstration", 1000);
 

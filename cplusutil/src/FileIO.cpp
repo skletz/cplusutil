@@ -101,7 +101,6 @@ std::vector<std::string> cplusutil::FileIO::getFileListFromDirectory(std::string
 
 	fs::directory_iterator v_it(path_to_directory), eovd;
 
-	int cnt = 0;
 	BOOST_FOREACH(fs::path const &p1, std::make_pair(v_it, eovd))
 	{
 		if (fs::is_regular_file(p1) && v_it->path().extension() == fileExtension)
@@ -120,7 +119,6 @@ std::vector<std::string> cplusutil::FileIO::getFileListFromDirectory(std::string
 
 	fs::directory_iterator v_it(path_to_directory), eovd;
 
-	int cnt = 0;
 	BOOST_FOREACH(fs::path const &p1, std::make_pair(v_it, eovd))
 	{
 		files.push_back(p1.string());

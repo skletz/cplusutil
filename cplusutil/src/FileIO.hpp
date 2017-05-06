@@ -6,6 +6,12 @@
 namespace fs = boost::filesystem;
 namespace cplusutil
 {
+	/**
+	* \brief FileIO
+	*
+	* @author skletz
+	* @version 2.0 06/05/17
+	*/
 	class FileIO
 	{
 	public:
