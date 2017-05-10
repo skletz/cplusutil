@@ -8,7 +8,7 @@ CXX=g++
 CXXFLAGS=-std=c++11 -m64
 TARGET=build
 BIN=bin
-STATICLIB=staticlib
+STATICLIB=lib
 EXT=ext
 
 SRC= cplusutil/src
