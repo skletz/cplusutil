@@ -45,7 +45,7 @@ $(TARGET)/$(EXT)/%.o: $(SRC)/%.cpp
 	   $(CXX) $(CXXFLAGS) -fPIC -c $< -o $@
 
 static: $(OBJECTS)
-	ar -rv $(TARGET)/$(LIB)/$(TARGETSTATIC) $(OBJECTS)
+	ar -rv $(TARGET)/$(LIB)/lib$(TARGETSTATIC) $(OBJECTS)
 
 
 clean:
