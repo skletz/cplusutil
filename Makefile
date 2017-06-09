@@ -1,52 +1,66 @@
-#
-#  Version 1.0
-#
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+#	Makefile for cplusutil (c++ collection)
+# @author skletz
+# @version 1.1, 08/06/17 change out directory
+# @version 1.0 01/05/17
+# -----------------------------------------------------------------------------
+# CMD Arguments:	os=win,linux (sets the operating system, default=linux)
+# -----------------------------------------------------------------------------
+# @TODO: Make for Windows (currently the option is only considered)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+
+# Default command line arguments
+os = linux
+
 PROJECT=cplusutil
 VERSION=1.0
 
-OS=Linux
 CXX=g++
 CXXFLAGS=-std=c++11 -m64
 
-TARGET=build
-BIN=bin
-LIB=lib
-EXT=ext
+# Output directory
+BUILD =	builds
+BIN =	linux/bin
+LIB =	linux/lib
+EXT =	linux/ext
 
 SRC= $(PROJECT)/src
-TARGETSHARED = $(PROJECT).so.1.0
+TARGETSHARED = $(PROJECT).so.$(VERSION)
 TARGETSTATIC = $(PROJECT).$(VERSION).a
 
 SOURCES=$(wildcard $(SRC)/*.cpp)
-OBJECTS=$(patsubst $(SRC)/%.cpp,$(TARGET)/$(EXT)/%.o,$(SOURCES))
+OBJECTS=$(patsubst $(SRC)/%.cpp,$(BUILD)/$(EXT)/%.o,$(SOURCES))
 
 LDLIBSOPTIONS=-L/usr/local/lib -lboost_filesystem -lboost_system
 
-# all:
-# 	# @echo $(SOURCES) "\n"
-# 	# @echo "Object files:"
-# 	# @echo $(OBJECTS)
-#
-# all: clean directories demo staticlib
+# operating system can be changed via command line argument
+ifeq ($(os),win)
+	BIN := win/bin
+	LIB := win/lib
+	EXT := win/ext
+endif
+
+.PHONY: all
+
 all: clean directories demo shared static
 
 directories:
-	mkdir -p $(TARGET)/$(BIN)
-	mkdir -p $(TARGET)/$(LIB)
-	mkdir -p $(TARGET)/$(EXT)
+	mkdir -p $(BUILD)/$(BIN)
+	mkdir -p $(BUILD)/$(LIB)
+	mkdir -p $(BUILD)/$(EXT)
 
 demo: $(OBJECTS)
-	$(CXX) $(CXXFLAGS) $(OBJECTS) -o $(TARGET)/$(BIN)/demo$(PROJECT).$(VERSION) $(LDLIBSOPTIONS)
+	$(CXX) $(CXXFLAGS) $(OBJECTS) -o $(BUILD)/$(BIN)/demo$(PROJECT).$(VERSION) $(LDLIBSOPTIONS)
 
 shared: $(OBJECTS)
-	$(CXX) $(CXXFLAGS) $(LDLIBSOPTIONS) -Wall -shared -Wl,-soname, $(TARGET)/$(EXT)/*.o -o $(TARGET)/$(LIB)/lib$(TARGETSHARED)
+	$(CXX) $(CXXFLAGS) $(LDLIBSOPTIONS) -Wall -shared -Wl,-soname, $(BUILD)/$(EXT)/*.o -o $(BUILD)/$(LIB)/lib$(TARGETSHARED)
 
-$(TARGET)/$(EXT)/%.o: $(SRC)/%.cpp
+$(BUILD)/$(EXT)/%.o: $(SRC)/%.cpp
 	   $(CXX) $(CXXFLAGS) -fPIC -c $< -o $@
 
 static: $(OBJECTS)
-	ar -rv $(TARGET)/$(LIB)/lib$(TARGETSTATIC) $(OBJECTS)
+	ar -rv $(BUILD)/$(LIB)/lib$(TARGETSTATIC) $(OBJECTS)
 
 
 clean:
-	rm -rf build
+	rm -rf $(BUILD)
